@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sandbox.io > Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+<body>
+    <h1 id="wellcome">Wellcome {user}</h1>
+
+    <div id="sandbox-maindiv">
+
+        <label for="sandbox-name">Name</label>
+        <input id="sandbox-name" name="sandbox-name" type="text" placeholder="Room name">
+
+    </div>
+
+    <div id="createRoom-maindiv">
+
+        <p>When you created a sandbox you can create a room from it</p>
+
+        <label for="createRoom-UID">Sandbox to load :</label>
+        <input id="createRoom-UID" name="createRoom-UID" type="text" placeholder="Sandbox UID">
+
+        <input id="createRoom-loadbutton" type="button" value="Create Room">
+    </div>
+
+</body>
+<footer>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="assets/js/panel.js"></script>
+</footer>
+</html>
