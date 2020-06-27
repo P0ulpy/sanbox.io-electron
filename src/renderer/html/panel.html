@@ -8,10 +8,24 @@
 <body>
     <h1 id="wellcome">Wellcome {user}</h1>
 
+    <!-- DEBUG -->
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="panel.html">Panel</a>
+
+
     <div id="sandbox-maindiv">
 
+        <p>sandbox creation zone</p>
+
         <label for="sandbox-name">Name</label>
-        <input id="sandbox-name" name="sandbox-name" type="text" placeholder="Room name">
+        <input id="sandbox-name" name="sandbox-name" type="text" placeholder="new Sandbox name">
+
+        <label for="sandbox-name">MOTD</label>
+        <input id="sandbox-MOTD" name="sandbox-MOTD" type="text" placeholder="new Sandbox MOTD">
+
+        <label for="sandbox-name">Size</label>
+        <input id="sandbox-size" name="sandbox-size" type="text" placeholder="new Sandbox size">
 
     </div>
 
@@ -28,6 +42,6 @@
 </body>
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script type="module" src="assets/js/panel.js"></script>
+    <script type="module" src="../js/panel/panel.js"></script>
 </footer>
 </html>

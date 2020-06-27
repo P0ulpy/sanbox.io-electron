@@ -1,31 +1,12 @@
-import { requestManager } from "./requestManager.js";
+import { requestManager } from "../requestManager.js";
 
-// TODO : TEMP
+const { remote } = require("electron");
+const env = remote.getGlobal("env");
 
-const notyf = new Notyf({
-    duration: 10000,
-    position: {
-      x: 'center',
-      y: 'top',
-    },
-    types: [
-      {
-        type: 'error',
-        dismissible: true
-      },
-      {
-        type: 'success',
-        dismissible: true
-      }
-    ]
-  });
+const notyf = new Notyf(env.notyfconfig);
 
 const DOM = 
 {
-    info: document.getElementById('info'),
-    warn: document.getElementById('warn'),
-    error: document.getElementById('error'),
-
     wellcome : document.getElementById('wellcome'),
     room : 
     {
@@ -35,38 +16,10 @@ const DOM =
     },
     sandbox : 
     {
-        
+        maindiv: document.getElementById(''),
+
+        createbutton: document.getElementById('')
     }
-}
-
-let panelData = null;
-
-
-// TODO : Connection (TEMP)
-
-function connectUser()
-{
-    requestManager.post('/login', {'email': 'admin@admin', 'password': 'admin'})
-    .then(async(response) => 
-    {
-        const responseData = await JSON.parse(await response.text());
-        
-        console.log("login response data", responseData);
-        
-        if(responseData.status === "OK")
-        {
-            loadPanelData();
-        }
-        else
-        {
-            notyf.error(responseData?.data?.message);
-            throw new Error(responseData?.data?.message);
-        }
-    })
-    .catch((err) => 
-    {
-        throw err;
-    });
 }
 
 function loadPanelData()
@@ -80,8 +33,7 @@ function loadPanelData()
         
         if(responseData.status === "OK")
         {
-            panelData = responseData.data;
-            onLoaded();
+            onLoaded(responseData.data);
         }
         else
         {
@@ -95,7 +47,7 @@ function loadPanelData()
     });
 }
 
-function onLoaded()
+function onLoaded(panelData)
 {   
     DOM.wellcome.innerHTML = `Wellcome ${panelData.user.username}`;
 
@@ -121,4 +73,8 @@ function onLoaded()
     });
 }
 
-connectUser();
+// pour le debug
+/*import { login } from "../conectionManager.js";
+login('admin@admin', 'admin');*/
+
+loadPanelData();

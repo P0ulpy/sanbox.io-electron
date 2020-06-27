@@ -1,4 +1,7 @@
-const server = 'http://localhost';
+const { remote } = require("electron");
+const env = remote.getGlobal("env");
+
+const server = env.server.toString() || 'http://localhost'; 
 
 export const requestManager = 
 {

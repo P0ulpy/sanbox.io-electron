@@ -1,3 +1,5 @@
+const { Notyf } = require('notyf');
+
 const env = {
     server: {
         domain: "localhost",
@@ -8,6 +10,24 @@ const env = {
         }
     },
     openedRoomUID: "001",
+    notyfconfig: 
+    {
+        duration: 10000,
+        position: {
+            x: 'center',
+            y: 'top',
+        },
+        types: [
+            {
+                type: 'error',
+                dismissible: true
+            },
+            {
+                type: 'success',
+                dismissible: true
+            }
+        ]
+    }
 };
 
 module.exports = env;
