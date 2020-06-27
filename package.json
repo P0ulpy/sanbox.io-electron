@@ -5,7 +5,7 @@
     "main": "src/main/main.js",
     "scripts": {
         "start": "electron .",
-        "postinstall-linux": "cp -R node_modules/@fortawesome/fontawesome-free ./src/vendor/fontawesome-free",
+        "postinstall-linux": "cp -R node_modules/@fortawesome/fontawesome-free ./src/renderer/vendor/fontawesome-free",
         "postinstall-windows": "xcopy \"./node_modules/@fortawesome/fontawesome-free\" \"./src/renderer/vendor/fontawesome-free\" /e /h /i"
     },
     "repository": "https://github.com/GabeNThePrimaryGod/sanbox.io-electron",
