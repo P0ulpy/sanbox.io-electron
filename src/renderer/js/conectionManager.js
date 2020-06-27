@@ -20,17 +20,17 @@ export function login(mail, password, notyf)
             {
                 if(notyf) notyf.success(responseData?.data?.message);
                 console.log('successfully login !');
-                return true;
+                resolve(responseData);
             }
             else
             {
                 if(notyf) notyf.error(responseData?.data?.message);
-                throw new Error(responseData?.data?.message);
+                reject(new Error(responseData?.data?.message));
             }
         })
         .catch((err) => 
         {
-            throw err;
+            reject(err);
         });
     });
 }

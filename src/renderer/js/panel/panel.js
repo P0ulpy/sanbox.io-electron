@@ -7,15 +7,17 @@ const notyf = new Notyf(env.notyfconfig);
 
 const DOM = 
 {
-    wellcome : document.getElementById('wellcome'),
-    room : 
+    wellcome: document.getElementById('wellcome'),
+    room: 
     {
         maindiv: document.getElementById('createRoom-maindiv'),
         UID: document.getElementById('createRoom-UID'),
         loadbutton: document.getElementById('createRoom-loadbutton')
     },
-    sandbox : 
+    sandbox: 
     {
+        //TODO :
+
         maindiv: document.getElementById(''),
 
         createbutton: document.getElementById('')
@@ -74,7 +76,9 @@ function onLoaded(panelData)
 }
 
 // pour le debug
-/*import { login } from "../conectionManager.js";
-login('admin@admin', 'admin');*/
-
-loadPanelData();
+import { login } from "../conectionManager.js";
+login('admin@admin', 'admin')
+.then(() => 
+{
+    loadPanelData();
+});
