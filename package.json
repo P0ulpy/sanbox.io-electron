@@ -4,12 +4,17 @@
     "description": "Application client du projet Sandbox.io",
     "main": "src/main/main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "postinstall-linux": "cp -R node_modules/@fortawesome/fontawesome-free ./src/vendor/fontawesome-free",
+        "postinstall-windows": "xcopy \"./node_modules/@fortawesome/fontawesome-free\" \"./src/renderer/vendor/fontawesome-free\" /e /h /i"
     },
     "repository": "https://github.com/GabeNThePrimaryGod/sanbox.io-electron",
     "author": "",
     "devDependencies": {
         "electron": "^9.0.3",
         "electron-reload": "^1.5.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.1"
     }
 }
