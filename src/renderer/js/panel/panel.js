@@ -1,4 +1,4 @@
-import { requestManager } from "../requestManager.js";
+import { requestManager } from "../requestmanager/requestManager.js";
 
 const { remote } = require("electron");
 const env = remote.getGlobal("env");

@@ -1,4 +1,4 @@
-import { login } from "../conectionManager.js";
+import { login } from "./conectionManager.js";
 
 const { remote } = require("electron");
 const env = remote.getGlobal("env");
