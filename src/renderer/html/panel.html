@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sandbox.io > Panel</title>
+    <link rel="stylesheet" href="../vendor/notyf/notyf.css">
+    <link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+</head>
+<body>
+    <h1 id="wellcome">Wellcome <i class="fas fa-spinner fa-spin"></i></h1>
+
+    <!-- DEBUG -->
+    <a href="index.html">Home</a>
+    <a href="panel.html">Panel</a>
+    <!-- DEBUG -->
+
+    <div id="user" style="float: right;"></div>
+
+    <div id="sandbox-maindiv">
+
+        <p>sandbox creation zone</p>
+
+        <label for="sandbox-name">Name</label>
+        <input id="sandbox-name" name="sandbox-name" type="text" placeholder="new Sandbox name">
+
+        <label for="sandbox-MOTD">MOTD</label>
+        <input id="sandbox-MOTD" name="sandbox-MOTD" type="text" placeholder="new Sandbox MOTD">
+
+        <label for="sandbox-size">Size</label>
+        <input id="sandbox-size" name="sandbox-size" type="text" placeholder="new Sandbox size">
+
+    </div>
+
+    <div id="createRoom-maindiv">
+
+        <p>When you created a sandbox you can load it in a room</p>
+
+        <label for="createRoom-UID">Sandbox to load :</label>
+        <input id="createRoom-UID" name="createRoom-UID" type="text" placeholder="Sandbox UID">
+
+        <input id="createRoom-loadbutton" type="button" value="Create Room">
+    </div>
+    
+</body>
+<footer>
+    <a id="home-redirect" href="./index.html" hiddens></a>
+    <script src="../vendor/notyf/notyf.js"></script>
+    <script type="module" src="../js/connection/user.js"></script>
+    <script type="module" src="../js/panel/panel.js"></script>
+</footer>
+</html>

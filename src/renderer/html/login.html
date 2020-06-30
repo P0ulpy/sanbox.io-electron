@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sandbox.io > Login</title> 
+    <link rel="stylesheet" href="../vendor/notyf/notyf.css">
+</head>
+<body>
+    
+    <!-- DEBUG -->
+    <a href="index.html">Home</a>
+    <!-- DEBUG -->
+
+    <div id="user" style="float: right;"></div>
+
+    <div id="login-maindiv">
+
+        <label for="login-email">Email</label>
+        <input type="email" name="login-email" id="login-email">
+
+        <label for="login-password">Password</label>
+        <input type="password" name="login-password" id="login-password">
+
+        <input type="button" name="login-button" id="login-button" value="Login">
+    </div>
+</body>
+<footer>
+    <a id="panel-redirect" href="./panel.html" hiddens></a>
+    <script src="../vendor/notyf/notyf.js"></script>
+    <script type="module" src="../js/connection/user.js"></script>
+    <script type="module" src="../js/connection/login.js"></script>
+</footer>
+</html>

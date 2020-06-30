@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="../css/loadRoom/style.css" />
+
+    <script src="../vendor/fontawesome-free/js/all.min.js"></script>
+    <script src="../vendor/socket.io-client/socket.io.js"></script>
+</head>
+
+<script type="module">
+    import LoadingRoom from "../js/loadRoom/LoadingRoom/index.js";
+    const { remote } = require("electron");
+    const env = remote.getGlobal("env");
+
+    const roomUID = env.openedRoomUID;
+    if (!roomUID)
+    {
+        window.close();
+    }
+
+    document.addEventListener("DOMContentLoaded", () =>
+    {
+        document.getElementById("roomUID").innerText = roomUID;
+    });
+
+    const room = new LoadingRoom(roomUID);
+
+    room.promise.then(console.log)
+    .catch(console.log);
+</script>
+
+<body>
+    <canvas width="500" height="500">
+    </canvas>
+
+    <div id="loadingOverlay" class="overlay">
+        <div class="message">
+            <i class="fas fa-spinner fa-spin"></i> Chargement de la Room #<span id="roomUID"></span>
+        </div>
+    </div>
+</body>
+</html>
