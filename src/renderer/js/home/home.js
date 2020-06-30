@@ -8,4 +8,8 @@ const DOM =
     rooms: document.getElementById('rooms')
 }
 
-requestManager.get()
+requestManager.get('/rooms')
+.then((data) => 
+{
+    console.log(data);
+}).catch(console.log);
