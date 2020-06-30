@@ -1,5 +1,8 @@
 import { requestManager } from "../requestmanager/requestManager.js";
 
+// pour les tests
+import { login } from "../connection/conectionManager.js";
+
 const { remote } = require("electron");
 const env = remote.getGlobal("env");
 
@@ -8,6 +11,8 @@ const notyf = new Notyf(env.notyfconfig);
 const DOM = 
 {
     wellcome: document.getElementById('wellcome'),
+    logout: document.getElementById('logout'),
+    homeRedirect: document.getElementById('home-redirect'),
     room: 
     {
         maindiv: document.getElementById('createRoom-maindiv'),
@@ -19,15 +24,26 @@ const DOM =
         //TODO :
 
         maindiv: document.getElementById(''),
-
         createbutton: document.getElementById('')
     }
+};
+
+function onStart()
+{
+    loadPanelData();
+
+    // pour le debug
+    /*login('admin@admin', 'admin')
+    .then(() => 
+    {
+        
+    });*/
 }
 
 function loadPanelData()
 {
     requestManager.get('/mypanel')
-    .then(async(response) => 
+    .then(async(response) =>
     {
         const responseData = await JSON.parse(await response.text());
 
@@ -40,6 +56,7 @@ function loadPanelData()
         else
         {
             notyf.error(responseData?.data?.message);
+            DOM.homeRedirect.click();
             throw new Error(responseData?.data?.message);
         }
     })
@@ -75,10 +92,4 @@ function onLoaded(panelData)
     });
 }
 
-// pour le debug
-import { login } from "../conectionManager.js";
-login('admin@admin', 'admin')
-.then(() => 
-{
-    loadPanelData();
-});
+onStart();

@@ -1,12 +1,13 @@
-import { login } from "./conectionManager.js";
-
 const { remote } = require("electron");
 const env = remote.getGlobal("env");
+
+import { login } from "./conectionManager.js";
 
 const notyf = new Notyf(env.notyfconfig);
 
 const DOM = 
 {
+    panelRedirect: document.getElementById('panel-redirect'), 
     login:
     {
         maindiv: document.getElementById('login-maindiv'),
@@ -18,5 +19,13 @@ const DOM =
 
 DOM.login.button.addEventListener('click', () => 
 {
-    login(DOM.login.email.value, DOM.login.password.value, notyf);
+    login(DOM.login.email.value, DOM.login.password.value, notyf)
+    .then(() => 
+    {
+        DOM.panelRedirect.click();
+    })
+    .catch((err) => 
+    {
+        throw err;
+    });
 });

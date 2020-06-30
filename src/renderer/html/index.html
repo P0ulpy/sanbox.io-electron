@@ -3,17 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Sandbox.io</title>
 </head>
 <body>
     <!-- DEBUG -->
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="panel.html">Panel</a>
+    <a href="index.html">Home</a>
+    <a href="panel.html">Home</a>
     <!-- DEBUG -->
+
+    <div id="user" style="float: right;"></div>
+
+    <div id="rooms"></div>
+
 </body>
 <footer>
+    <script src="../vendor/notyf/notyf.js"></script>
+    <script type="module" src="../js/connection/user.js"></script>
+    <script type="module" src="../js/home/home.js"></script>
 </footer>
 </html>

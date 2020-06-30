@@ -8,10 +8,10 @@
 <body>
     
     <!-- DEBUG -->
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="panel.html">Panel</a>
+    <a href="index.html">Home</a>
     <!-- DEBUG -->
+
+    <div id="user" style="float: right;"></div>
 
     <div id="login-maindiv">
 
@@ -25,7 +25,9 @@
     </div>
 </body>
 <footer>
+    <a id="panel-redirect" href="./panel.html" hiddens></a>
     <script src="../vendor/notyf/notyf.js"></script>
+    <script type="module" src="../js/connection/user.js"></script>
     <script type="module" src="../js/connection/login.js"></script>
 </footer>
 </html>
