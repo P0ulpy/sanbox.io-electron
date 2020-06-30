@@ -1,4 +1,4 @@
-import EventEmitter from "../vendor/EventEmitter.js";
+import EventEmitter from "../../../vendor/EventEmitter.js";
 
 import { loadImage } from "../Tools/index.js";
 import { ClientEnvironmentMod, ClientOverlayMod, ClientGameplayMod } from "../ClientMod/index.js";
