@@ -75,7 +75,8 @@ export default class RoomList
       
        
         <div class="center">
-        <button onclick="refreshRoomList()">Refresh</button>
+        <button class="waves-effect waves-light btn" onclick="refreshRoomList()">Refresh</button>
+       
         <table id="roomList" class="tftable" border="1">
         <tr>
             <th>Nom</th>
@@ -97,7 +98,8 @@ export default class RoomList
                 <td>${room.mods.overlay.name}</td>
                 <td>${room.mods.environment.name}</td>
                 <td>${1}/${room.size}</td>
-                <td><button onclick="connectRoom('${room.UID}')">join</button></td>
+                <td><a type="button"onclick="connectRoom('${room.UID}')" class="btn-floating btn-small waves-effect waves-light blue"data-target="side-form"><i class="material-icons">done</i></a></td>
+                
             </tr>
             `;
         }

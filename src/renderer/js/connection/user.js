@@ -22,12 +22,15 @@ if (!DOM.user) {
 } else {
 
     function showConnected(userData) {
-        DOM.user.innerHTML = "";
         
+        
+        const wellcomeH1 = document.createElement("div");
        
+        
 
         const panelURL = document.createElement("a");
         panelURL.setAttribute("href", "./panel.html");
+        panelURL.setAttribute("class", "waves-effect waves-light btn" )
         panelURL.innerHTML = "Panel ";
 
         const redirectURL = document.createElement("a");
@@ -35,6 +38,8 @@ if (!DOM.user) {
         redirectURL.setAttribute("href", "./index.html");
 
         const logoutButton = document.createElement("button");
+        logoutButton.setAttribute("class", "waves-effect waves-light btn" )
+        logoutButton.setAttribute("style", "margin-left:5%;" )
         logoutButton.innerHTML = "Logout";
         logoutButton.addEventListener('click', () => {
             logout().then(() => {
