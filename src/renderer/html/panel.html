@@ -33,7 +33,9 @@
         <label for="createRoom-UID">Sandbox to load :</label>
         <input id="createRoom-UID" name="createRoom-UID" type="text" placeholder="Sandbox UID">
 
-        <input id="createRoom-loadbutton" type="button" value="Create Room">
+        <!--<input id="createRoom-loadbutton" type="button" value="Create Room">-->
+        
+         Create Room <a type="button" id="createRoom-loadbutton" class="btn-floating btn-small waves-effect waves-light blue"data-target="side-form"><i class="material-icons">add</i></a>
         <div id="user"></div>
 
     </div>
@@ -44,7 +46,10 @@
 
 </body>
 <footer>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+   <!---CSS-->
+   <script type="text/javascript" src="../js/materialize.min.js"></script>
+   <script type="text/javascript" src="../js/ui.js"></script>
+   <!---CSS-->
     
     <a id="loadRoom-redirect" href="./loadRoom.html" hidden></a>
     <a id="home-redirect" href="./index.html" hidden></a>
