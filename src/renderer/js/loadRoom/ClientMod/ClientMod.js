@@ -2,10 +2,15 @@ import EventEmitter from "../../../vendor/EventEmitter.js";
 
 export default class ClientMod extends EventEmitter
 {
-    constructor()
+    constructor(config)
     {
         super();
-        console.log("bonjour");
+        this.UID = config.UID;
+        this.category = config.category;
+        this.description = config.description;
+        this.loadedResources = config.loadedResources;
+        this.name = config.name;
+        this.resources = config.resources;
 
         setTimeout(() =>
         {

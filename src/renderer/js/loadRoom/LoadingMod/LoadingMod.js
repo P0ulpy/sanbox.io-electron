@@ -18,6 +18,7 @@ export default class LoadingMod extends EventEmitter
         this.resources = config.resources;
         // name: string, resource: any (bon, ici on ne prend en charge que Image)
         this.loadedResources = new Map();
+        this.config.loadedResources = this.loadedResources;
 
         this.clientClass = null;
 

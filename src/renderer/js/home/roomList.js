@@ -55,6 +55,15 @@ export default class RoomList
 
     async refresh()
     {
+        try
+        {
+            const data = await this.getData();
+        }
+        catch(err)
+        {
+            
+        }
+        
         const data = await this.getData();
 
         let tab =
