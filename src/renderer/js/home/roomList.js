@@ -59,6 +59,13 @@ export default class RoomList
 
         let tab =
         `
+    
+        <div class="recipes container grey-text text-darken-1">
+    
+        
+      
+       
+        <div class="center">
         <button onclick="refreshRoomList()">Refresh</button>
         <table id="roomList" class="tftable" border="1">
         <tr>
@@ -86,7 +93,7 @@ export default class RoomList
             `;
         }
 
-        tab += "</table>";
+        tab += "</table></div>";
 
         this.mainDiv.innerHTML = tab;
     }
