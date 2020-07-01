@@ -23,13 +23,13 @@ if (!DOM.user) {
 
     function showConnected(userData) {
         DOM.user.innerHTML = "";
-
+        
         const wellcomeH1 = document.createElement("div");
         wellcomeH1.innerHTML = `Hello ${userData.username}`;
 
         const panelURL = document.createElement("a");
         panelURL.setAttribute("href", "./panel.html");
-        panelURL.innerHTML = "panel";
+        panelURL.innerHTML = "Panel ";
 
         const redirectURL = document.createElement("a");
         redirectURL.setAttribute("hiddens", "");

@@ -4,37 +4,75 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css" />
-    <link rel="stylesheet" href="../css/loadRoom/style.css" />
 
     <script src="../vendor/fontawesome-free/js/all.min.js"></script>
     <script src="../vendor/socket.io-client/socket.io.js"></script>
+
+    <style>
+        .overlay 
+        {
+            display: flex;
+            position: fixed;
+            text-align: center;
+            vertical-align: bottom;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .overlay .message
+        {
+            margin: auto;
+        }
+
+    </style>
 </head>
 
 <script type="module">
     import LoadingRoom from "../js/loadRoom/LoadingRoom/index.js";
     const { remote } = require("electron");
     const env = remote.getGlobal("env");
-
+    
     const roomUID = env.openedRoomUID;
     if (!roomUID)
     {
         window.close();
     }
 
+    let DOM = null;
+
     document.addEventListener("DOMContentLoaded", () =>
-    {
-        document.getElementById("roomUID").innerText = roomUID;
+    {   
+        DOM = 
+        {
+            roomUID: document.getElementById("roomUID"),
+            loadingOverlay: document.getElementById("loadingOverlay")
+        }
+
+        DOM.roomUID.innerText = roomUID;
+
+        const room = new LoadingRoom(roomUID);
+
+        room.promise.then(() => 
+        {
+            console.log('Room Chargé');
+            DOM.loadingOverlay.style.display = 'none';
+        })
+        .catch(console.log);
     });
 
-    const room = new LoadingRoom(roomUID);
-
-    room.promise.then(console.log)
-    .catch(console.log);
 </script>
 
 <body>
-    <canvas width="500" height="500">
-    </canvas>
+    <canvas id="overlayCanvas" width="500" height="500"></canvas>
+    <canvas id="environementCanvas" width="500" height="500"></canvas>
+    <canvas id="gameplayCanvas" width="500" height="500"></canvas>
 
     <div id="loadingOverlay" class="overlay">
         <div class="message">

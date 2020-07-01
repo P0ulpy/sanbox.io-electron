@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../css/main.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/main.css" media="screen,projection"/>
 
 </head>
 <body class="grey lighten-4">
@@ -16,41 +16,31 @@
     <nav class="nav-extended">
         <div class="nav-wrapper">
             <a href="index.html" class="brand-logo center">Sandbox<span>.IO</span></a>
-        
+
         </div>
     </nav>
-    <h1 id="wellcome">Welcome <i class="fas fa-spinner fa-spin"></i></h1>
-
     <div id="user"></div>
 
-    <!--<div id="sandbox-maindiv">
-
-        <p>sandbox creation zone</p>
-
-        <label for="sandbox-name">Name</label>
-        <input id="sandbox-name" name="sandbox-name" type="text" placeholder="new Sandbox name">
-
-        <label for="sandbox-MOTD">MOTD</label>
-        <input id="sandbox-MOTD" name="sandbox-MOTD" type="text" placeholder="new Sandbox MOTD">
-
-        <label for="sandbox-size">Size</label>
-        <input id="sandbox-size" name="sandbox-size" type="text" placeholder="new Sandbox size">
-
-    </div>
-
+    <h2 id="wellcome">Welcome <i class="fas fa-spinner fa-spin"></i></h2>
+    
     <div id="createRoom-maindiv">
 
-        <p>When you created a sandbox you can load it in a room</p>
+        <p>Create a Room From a Sandbox UID</p>
 
         <label for="createRoom-UID">Sandbox to load :</label>
         <input id="createRoom-UID" name="createRoom-UID" type="text" placeholder="Sandbox UID">
 
         <input id="createRoom-loadbutton" type="button" value="Create Room">
-    </div>-->
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    </div>
+
+    <div id="rooms"></div>
+
 </body>
 <footer>
-    <a id="home-redirect" href="./index.html" hiddens></a>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    
+    <a id="loadRoom-redirect" href="./loadRoom.html" hidden></a>
+    <a id="home-redirect" href="./index.html" hidden></a>
     <script src="../vendor/notyf/notyf.js"></script>
     <script type="module" src="../js/connection/user.js"></script>
     <script type="module" src="../js/panel/panel.js"></script>

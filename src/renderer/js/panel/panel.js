@@ -2,42 +2,34 @@ import { requestManager } from "../requestmanager/requestManager.js";
 
 // pour les tests
 import { login } from "../connection/conectionManager.js";
+import RoomList from "../home/roomList.js";
 
 const { remote } = require("electron");
 const env = remote.getGlobal("env");
 
 const notyf = new Notyf(env.notyfconfig);
 
+let roomList = null;
+
 const DOM = 
 {
     wellcome: document.getElementById('wellcome'),
     logout: document.getElementById('logout'),
     homeRedirect: document.getElementById('home-redirect'),
+    loadRoomRedirect: document.getElementById('loadRoom-redirect'),
+    rooms: document.getElementById('rooms'),
     room: 
     {
         maindiv: document.getElementById('createRoom-maindiv'),
         UID: document.getElementById('createRoom-UID'),
         loadbutton: document.getElementById('createRoom-loadbutton')
-    },
-    sandbox: 
-    {
-        //TODO :
-
-        maindiv: document.getElementById(''),
-        createbutton: document.getElementById('')
     }
 };
 
 function onStart()
 {
     loadPanelData();
-
-    // pour le debug
-    /*login('admin@admin', 'admin')
-    .then(() => 
-    {
-        
-    });*/
+    roomList = new RoomList(DOM.rooms, DOM.loadRoomRedirect, notyf);
 }
 
 function loadPanelData()
