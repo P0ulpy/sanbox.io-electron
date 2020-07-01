@@ -7,6 +7,9 @@
 
     <script src="../vendor/fontawesome-free/js/all.min.js"></script>
     <script src="../vendor/socket.io-client/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/main.css"  media="screen,projection"/>
 
     <style>
         .overlay 
@@ -42,6 +45,13 @@
         #environmentCanvas { z-index: 1 }
         #gameplayCanvas { z-index: 2 }
         #overlayCanvas { z-index: 3 }
+        #overlayDiv {
+            z-index: 4;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            display: none;
+        }
 
     </style>
 </head>
@@ -77,6 +87,8 @@
             DOM.loadingOverlay.style.display = 'none';
         })
         .catch(console.log);
+
+       
     });
 
 </script>
@@ -87,6 +99,8 @@
         <canvas id="overlayCanvas" width="500" height="500"></canvas>
         <canvas id="environmentCanvas" width="500" height="500"></canvas>
         <canvas id="gameplayCanvas" width="500" height="500"></canvas>
+        <div id="overlayDiv">
+            <a  id="leaveGameBtn" onclick="windows.location.close()"class="waves-effect waves-light btn" href="./index.html">Leave</a></div>
     </div>
 
     <div id="loadingOverlay" class="overlay">
@@ -95,4 +109,10 @@
         </div>
     </div>
 </body>
+<footer>
+     <!---CSS-->
+     <script type="text/javascript" src="../js/materialize.min.js"></script>
+     <script type="text/javascript" src="../js/ui.js"></script>
+     <!---CSS-->
+</footer>
 </html>
