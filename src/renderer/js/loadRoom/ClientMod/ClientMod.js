@@ -11,11 +11,6 @@ export default class ClientMod extends EventEmitter
         this.loadedResources = config.loadedResources;
         this.name = config.name;
         this.resources = config.resources;
-
-        setTimeout(() =>
-        {
-            this.sendData("skululu", "data");
-        }, 1000);
     }
     
     sendData(event, data)

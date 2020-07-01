@@ -31,6 +31,18 @@
             margin: auto;
         }
 
+        #modCanvas 
+        {
+            width: 500px;
+            height: 500px;
+            border: dotted black 2px;
+        }
+
+        #modCanvas canvas { position: absolute; }
+        #environmentCanvas { z-index: 1 }
+        #gameplayCanvas { z-index: 2 }
+        #overlayCanvas { z-index: 3 }
+
     </style>
 </head>
 
@@ -70,9 +82,12 @@
 </script>
 
 <body>
-    <canvas id="overlayCanvas" width="500" height="500"></canvas>
-    <canvas id="environementCanvas" width="500" height="500"></canvas>
-    <canvas id="gameplayCanvas" width="500" height="500"></canvas>
+
+    <div id='modCanvas'>
+        <canvas id="overlayCanvas" width="500" height="500"></canvas>
+        <canvas id="environmentCanvas" width="500" height="500"></canvas>
+        <canvas id="gameplayCanvas" width="500" height="500"></canvas>
+    </div>
 
     <div id="loadingOverlay" class="overlay">
         <div class="message">
