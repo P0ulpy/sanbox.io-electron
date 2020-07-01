@@ -26,6 +26,6 @@ DOM.login.button.addEventListener('click', () =>
     })
     .catch((err) => 
     {
-        throw err;
+        console.log("mdr")
     });
 });

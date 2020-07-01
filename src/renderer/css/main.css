@@ -1,0 +1,23 @@
+/* colours */
+:root{
+    --primary: #424242;
+    --secondary: #424242;
+    --title: #ffffff;
+  }
+  
+  /* layout styles */
+  nav{
+    background: var(--primary);
+    border-bottom: 10px solid var(--secondary);
+  }
+  nav a{
+    text-transform: uppercase;
+    color: var(--title);
+  }
+  nav a span{
+    font-weight: bold;
+  }
+  nav .sidenav-trigger{
+    margin: 0;
+  }
+  

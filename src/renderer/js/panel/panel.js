@@ -68,7 +68,7 @@ function loadPanelData()
 
 function onLoaded(panelData)
 {   
-    DOM.wellcome.innerHTML = `Wellcome ${panelData.user.username}`;
+    DOM.wellcome.innerHTML = `Welcome ${panelData.user.username}`;
 
     DOM.room.loadbutton.addEventListener('click', (event) => 
     {

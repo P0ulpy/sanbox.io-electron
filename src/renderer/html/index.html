@@ -4,36 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Sandbox.io</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/main.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <link rel="stylesheet" href="../vendor/notyf/notyf.css">
     <link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
 
-
-    <style type="text/css">
-        .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
-        .tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
-        .tftable tr {background-color:#d4e3e5;}
-        .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
-        .tftable tr:hover {background-color:#ffffff;}
-    </style>
-
-
-
-
 </head>
-<body>
-    <!-- DEBUG -->
-    <a href="index.html">Home</a>
-    <a href="panel.html">Home</a>
-    <!-- DEBUG -->
 
-    <div id="user" style="float: right;"></div>
+<body class="grey lighten-4">
+    <!-- top nav -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">Sandbox<span>.IO</span></a>
+        
+        </div>
+    </nav>
 
-    <div id="rooms"><i class="fas fa-spinner fa-spin"></i></div>
+    <div class="center">
+        <h1>Welcome to Sandbox.io</h1>
+
+        <div id="user"></div>
+
+        <div id="rooms"></div>
+    </div>
+    
 </body>
+
 <footer>
+         <!---CSS-->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+         <!---CSS-->
+         
     <a id="loadRoom-redirect" href="./loadRoom.html"></a>
     <script src="../vendor/notyf/notyf.js"></script>
     <script type="module" src="../js/connection/user.js"></script>
     <script type="module" src="../js/home/home.js"></script>
 </footer>
+
 </html>
