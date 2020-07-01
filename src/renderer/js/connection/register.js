@@ -3,8 +3,7 @@ const env = remote.getGlobal("env");
 
 import { register } from "./conectionManager.js";
 
-const { remote } = require("electron");
-const env = remote.getGlobal("env");
+
 
 const notyf = new Notyf(env.notyfconfig);
 

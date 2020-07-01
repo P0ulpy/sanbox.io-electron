@@ -1,4 +1,7 @@
-import { getUserData, logout } from "./conectionManager.js";
+import {
+    getUserData,
+    logout
+} from "./conectionManager.js";
 
 /*
     /!\ ce script a imperativement besoin d'un balise avec l'id "userData" pour fonctionner
@@ -10,26 +13,21 @@ import { getUserData, logout } from "./conectionManager.js";
     ps. oui le code est a dégeu mais bon paltemp
 */
 
-const DOM = 
-{
+const DOM = {
     user: document.getElementById("user")
 }
 
-if(!DOM.user)
-{
+if (!DOM.user) {
     console.error('you add userData script to this page but there is not user div');
-}
-else
-{
+} else {
     // de base on montre le profil offline
     showDiconnected();
 
-    function showConnected(userData)
-    {
+    function showConnected(userData) {
         DOM.user.innerHTML = "";
 
         const wellcomeH1 = document.createElement("h2");
-        wellcomeH1.innerHTML = `Wellcome ${userData.username}`;
+        wellcomeH1.innerHTML = `Welcome ${userData.username}`;
 
         const panelURL = document.createElement("a");
         panelURL.setAttribute("href", "./panel.html");
@@ -38,43 +36,52 @@ else
         const redirectURL = document.createElement("a");
         redirectURL.setAttribute("hiddens", "");
         redirectURL.setAttribute("href", "./index.html");
-        
+
         const logoutButton = document.createElement("button");
         logoutButton.innerHTML = "Logout";
-        logoutButton.addEventListener('click', () => 
-        {
-            logout().then(() => 
-            {
+        logoutButton.addEventListener('click', () => {
+            logout().then(() => {
                 redirectURL.click();
             });
         });
-    
+
         DOM.user.appendChild(wellcomeH1);
         DOM.user.appendChild(panelURL);
         DOM.user.appendChild(logoutButton);
     }
-    
-    function showDiconnected()
-    {   
+
+    function showDiconnected() {
         DOM.user.innerHTML = "";
 
         DOM.user.innerHTML =
-        `
-        <a href="./login.html">login</a>
-        <a href="./register.html">register</a>
+            `
+    
+        <div class="row">
+        <div class="col s6 offset-s3">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                    <span class="card-title">You need to login / register</span>
+                    <p>You need to be logged in in order to access the full experienxe</p>
+                    </div>
+                    <div class="card-action">
+                    <a class="waves-effect waves-light btn" href="./login.html">login</a>
+                    <a class="waves.effect waves-lgith btn" href="./register.html" >register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         `;
     }
-    
+
     getUserData()
-    .then((response) => 
-    {
-        if(response.status === 'OK')
-        {
-            showConnected(response.userData);
-        }
-        else
-        {
-            showDiconnected();
-        }
-    }).catch((err) => {throw err;})    
+        .then((response) => {
+            if (response.status === 'OK') {
+                showConnected(response.userData);
+            } else {
+                showDiconnected();
+            }
+        }).catch((err) => {
+            throw err;
+        })
 }
