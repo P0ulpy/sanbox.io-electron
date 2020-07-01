@@ -29,7 +29,7 @@ else
         DOM.user.innerHTML = "";
 
         const wellcomeH1 = document.createElement("h2");
-        wellcomeH1.innerHTML = `Wellcome ${userData.username}`;
+        wellcomeH1.innerHTML = `Hello ${userData.username}`;
 
         const panelURL = document.createElement("a");
         panelURL.setAttribute("href", "./panel.html");

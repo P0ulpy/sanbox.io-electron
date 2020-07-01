@@ -1,8 +1,6 @@
-const { Notyf } = require('notyf');
-
 const env = {
     server: {
-        domain: "localhost",
+        domain: "192.168.1.8",
         port: 80,
         toString()
         {

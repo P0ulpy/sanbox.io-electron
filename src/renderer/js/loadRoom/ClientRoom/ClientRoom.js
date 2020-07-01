@@ -51,17 +51,17 @@ export default class ClientRoom
 
         this.socket.on("overlay", (data) =>
         {
-            this.overlayMod.emit("receiveData", data);
+            this.overlayMod.onReceiveData(data.targetEvent, data.data);
         })
 
         .on("gameplay", (data) =>
         {
-            this.gameplayMod.emit("receiveData", data);
+            this.gameplayMod.onReceiveData(data.targetEvent, data.data);
         })
 
         .on("environment", (data) =>
         {
-            this.environmentMod.emit("receiveData", data);
+            this.environmentMod.onReceiveData(data.targetEvent, data.data);
         });
     }
 

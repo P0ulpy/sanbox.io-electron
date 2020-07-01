@@ -9,7 +9,17 @@ export default class ClientMod extends EventEmitter
 
         setTimeout(() =>
         {
-            this.emit("sendData", "skululu", "data");
+            this.sendData("skululu", "data");
         }, 1000);
+    }
+    
+    sendData(event, data)
+    {
+        this.emit("sendData", event, data);
+    }
+
+    onReceiveData(event, data)
+    {
+        console.log(event, data);
     }
 }
