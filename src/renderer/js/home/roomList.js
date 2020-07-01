@@ -97,7 +97,7 @@ export default class RoomList
                 <td>${room.mods.gameplay.name}</td>
                 <td>${room.mods.overlay.name}</td>
                 <td>${room.mods.environment.name}</td>
-                <td>${1}/${room.size}</td>
+                <td>${room.playersCount}/${room.size}</td>
                 <td><a type="button"onclick="connectRoom('${room.UID}')" class="btn-floating btn-small waves-effect waves-light blue"data-target="side-form"><i class="material-icons">done</i></a></td>
                 
             </tr>
