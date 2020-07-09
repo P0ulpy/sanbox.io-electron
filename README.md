@@ -13,7 +13,6 @@ Il y a plusieurs technologies misent en place dans ce projet
 - Electron
 - NodeJS
 - Socket.io
-- NoSql
 
 Le projet est principalement écris en Javascript
 
