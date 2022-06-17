@@ -11,7 +11,7 @@
     "repository": "https://github.com/GabeNThePrimaryGod/sanbox.io-electron",
     "author": "",
     "devDependencies": {
-        "electron": "^13.6.6",
+        "electron": "^15.5.5",
         "electron-reload": "^1.5.0"
     },
     "dependencies": {
